@@ -8,20 +8,22 @@ endif
 let g:loaded_uss_clean_buffers = 1
 
 if !exists(":CloseHiddenBuffers")
-    command! CloseHiddenBuffers call s:delete_hidden_buffers()
+    command! -bang CloseHiddenBuffers call s:delete_hidden_buffers(<bang>0)
 endif
 if !exists(":CLO")
-    command! CLO call s:delete_hidden_buffers()
+    command! -bang CLO call s:delete_hidden_buffers(<bang>0)
 endif
 
-function! s:delete_hidden_buffers() abort
+function! s:delete_hidden_buffers(shouldCloseTerminalBuffers) abort
     let l:tpbl=[]
     let l:closed = 0
     call map(range(1, tabpagenr('$')), 'extend(l:tpbl, tabpagebuflist(v:val))')
     for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(l:tpbl, v:val)==-1')
-        if getbufvar(buf, '&mod') == 0 && getbufvar(buf, '&buftype') != 'terminal'
-            silent execute 'bwipeout!' buf
-            let l:closed += 1
+        if getbufvar(buf, '&mod') == 0
+            if (getbufvar(buf, '&buftype') != 'terminal' || a:shouldCloseTerminalBuffers)
+                silent execute 'bwipeout!' buf
+                let l:closed += 1
+            endif
         endif
     endfor
     redraw!
