@@ -1,9 +1,9 @@
-if(exists("g:autoloaded_uss_clean_buffers"))
+if(exists("g:autoloaded_close_hidden_buffers_command"))
     finish
 endif
-let g:autoloaded_uss_clean_buffers = 1
+let g:autoloaded_close_hidden_buffers_command = 1
 
-function! ussCleanBuffers#DeleteHiddenBuffers(shouldCloseTerminalBuffers) abort
+function! closeHiddenBuffersCommand#DeleteHiddenBuffers(shouldCloseTerminalBuffers) abort
     let l:tpbl=[]
     let l:closed = 0
     call map(range(1, tabpagenr('$')), 'extend(l:tpbl, tabpagebuflist(v:val))')

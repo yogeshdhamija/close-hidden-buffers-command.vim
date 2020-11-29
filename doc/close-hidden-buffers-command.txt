@@ -1,6 +1,6 @@
-*uss-clean-buffers.txt*  UltaSuperSimple Function to clear hidden buffers
+*close-hidden-buffers-command.txt*  
 
-Author:  Yogesh Dhamija <ydhamija96.github.io>
+Author:  Yogesh Dhamija <yogeshdhamija.github.io>
 
                                                 *:CloseHiddenBuffers*
 :CloseHiddenBuffers[!]      Closes all hidden buffers that don't have unsaved changes. If ! is used,
