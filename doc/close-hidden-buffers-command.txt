@@ -6,5 +6,6 @@ Author:  Yogesh Dhamija <yogeshdhamija.github.io>
 :CloseHiddenBuffers[!]      Closes all hidden buffers that don't have unsaved changes. If ! is used,
                             also close hidden terminal buffers.
 
-                                                *:CLO*
-:CLO[!]                     |:CloseHiddenBuffers|
+                                                *:CLOSEHIDDENBUFFERS*
+:CLOSEHIDDENBUFFERS[!]                     |:CloseHiddenBuffers|
+                            This capitalized command is defined so that an abbreviated version can more easily be typed, like ":CLO" (see |user-cmd-ambiguous|)
