@@ -7,5 +7,6 @@ Author:  Yogesh Dhamija <yogeshdhamija.github.io>
                             also close hidden terminal buffers.
 
                                                 *:CLOSEHIDDENBUFFERS*
-:CLOSEHIDDENBUFFERS[!]                     |:CloseHiddenBuffers|
-                            This capitalized command is defined so that an abbreviated version can more easily be typed, like ":CLO" (see |user-cmd-ambiguous|)
+:CLOSEHIDDENBUFFERS[!]      Equivalent to |:CloseHiddenBuffers|.
+                            This capitalized command is defined so that an abbreviated version can more 
+                            easily be typed, like ":CLO" (see |user-cmd-ambiguous|).
