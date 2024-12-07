@@ -5,7 +5,7 @@ let g:autoloaded_close_hidden_buffers_command = 1
 
 function! closeHiddenBuffersCommand#DeleteHiddenBuffers(shouldCloseTerminalBuffers) abort
     if(exists("g:vscode"))
-        call VSCodeCall("workbench.action.closeOtherEditors")
+        call v:lua.require("vscode").call("workbench.action.closeOtherEditors")
     else
         let l:tpbl=[]
         let l:closed = 0
